@@ -22,7 +22,7 @@
   })
 </script>
 
-<div class="flex flex-col items-start">
+<div class="flex flex-col items-start p-6">
   <div class="flex items-center bg-[#453324] p-4">
     <div class="flex flex-col items-center">
       <img
