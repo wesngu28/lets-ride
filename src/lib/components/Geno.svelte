@@ -1,16 +1,16 @@
 <script lang="ts">
   import { getQBLastGame } from '$lib/helpers/getQBLastGame'
+    import { yardsPerAttempt } from '$lib/helpers/getYardsPerAttempt'
   import { onMount } from 'svelte'
   import Stats from './Stats.svelte'
   let weeklyGameStats = {} as {
     opponent: string
     week: string
-    score: string
+    home: string
+    away: string
     completions: string
     attempts: string
     yards: string
-    compctg: string
-    ypa: string
     tds: string
     ints: string
     sacks: string
@@ -18,7 +18,7 @@
   }
 
   onMount(async () => {
-    weeklyGameStats = await getQBLastGame('15864')
+    weeklyGameStats = await getQBLastGame('15864', '26')
   })
 </script>
 
@@ -38,8 +38,22 @@
     <h2 class="text-2xl">
       <span class="font-bold">WK{weeklyGameStats.week}</span> vs
       <span class="font-bold"
-        >{`${weeklyGameStats.opponent}`} => {weeklyGameStats.score}</span
+        >{`${weeklyGameStats.opponent}`} =>           <span
+        class={`font-bold ${
+          Number(weeklyGameStats.home) > Number(weeklyGameStats.away)
+            ? 'text-green-400'
+            : 'text-red-600'
+        }`}>{weeklyGameStats.home}</span
       >
+      -
+      <span
+        class={`${
+          Number(weeklyGameStats.away) > Number(weeklyGameStats.home)
+            ? 'text-green-400'
+            : 'text-red-600'
+        }`}>{weeklyGameStats.away}</span
+      >
+      </span>
     </h2>
     <table class="table table-fixed border-separate border-spacing-x-4">
       <tr>
@@ -55,7 +69,7 @@
           >{weeklyGameStats.completions}/{weeklyGameStats.attempts}</td
         >
         <td class="font-black">{weeklyGameStats.yards}</td>
-        <td class="font-black">{weeklyGameStats.ypa}</td>
+        <td class="font-black">{yardsPerAttempt(weeklyGameStats.attempts, weeklyGameStats.yards)}</td>
         <td class="font-black">{weeklyGameStats.tds}/{weeklyGameStats.ints}</td>
         <td class="font-black">{weeklyGameStats.qbr}</td>
         <td class="font-black">{weeklyGameStats.sacks}</td>
@@ -68,7 +82,6 @@
       completions="waboomba"
       total="api pulla"
       yards={333}
-      ypa={1.1}
       td={1}
       int={10}
       qbr={10.0}

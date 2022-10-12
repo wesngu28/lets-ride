@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply m-0 p-0 font-sans bg-gradient-to-r from-[#fb4f14] to-[#003087] scrollbar-hide;
-    }
+  body {
+    @apply scrollbar-hide m-0 bg-gradient-to-r from-[#fb4f14] to-[#003087] p-0 font-sans;
+  }
 }
 
 @layer utilities {
-    .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-    }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 
-    .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

@@ -1,4 +1,4 @@
-export async function getQBLastGame(espnAthleteID: string) {
+export async function getQBLastGame(espnAthleteID: string, teamID: string) {
   const lastGameStatsResponse = await fetch(
     `https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/${espnAthleteID}/gamelog`
   )
@@ -6,21 +6,31 @@ export async function getQBLastGame(espnAthleteID: string) {
   const stats = lastGameStatsJson.seasonTypes[0].categories[0].events[0].stats
   let eventId = lastGameStatsJson.seasonTypes[0].categories[0].events[0].eventId
   const opponent = lastGameStatsJson.events[eventId]
-  const scoreConstruction = () => {
-    if (opponent.homeTeamId === '7') {
-      return `${opponent.homeTeamScore} - ${opponent.awayTeamScore}`
+  const teamScore = () => {
+    if (opponent.homeTeamId === teamID) {
+      return opponent.homeTeamScore
     }
-    return `${opponent.awayTeamScore} - ${opponent.homeTeamScore}`
+    if (opponent.awayTeamId === teamID) {
+      return opponent.awayTeamScore
+    }
+  }
+  const opponentScore = () => {
+    if (opponent.homeTeamId !== teamID) {
+      return opponent.homeTeamScore
+    }
+    if (opponent.awayTeamScore !== teamID) {
+      return opponent.awayTeamScore
+    }
   }
   let gameInfo = {
     week: opponent.week,
     opponent: opponent.opponent.abbreviation,
-    score: scoreConstruction(),
+    home: teamScore(),
+    away: opponentScore(),
     completions: stats[0],
     attempts: stats[1],
     yards: stats[2],
     compctg: stats[3],
-    ypa: stats[4],
     tds: stats[5],
     ints: stats[6],
     sacks: stats[8],

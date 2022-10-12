@@ -7,7 +7,7 @@
 </script>
 
 <div class="m-4 flex flex-col items-center bg-slate-600 p-4 text-center">
-  <img {alt} src={logo} />
+  <img alt={alt} src={logo} />
   <h2 class="m-2">{teamName}</h2>
   <p><span class="m-2">{wins}</span><span>-</span><span class="m-2">{losses}</span></p>
 </div>

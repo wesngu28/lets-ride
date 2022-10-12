@@ -7,7 +7,7 @@
 
 <div class="flex justify-start">
   <Sidebar />
-  <div class="flex flex-col flex-[3_3_0%] p-4 items-center right-0">
+  <div class="right-0 flex flex-[3_3_0%] flex-col items-center p-4">
     <Russ />
     <div class="flex items-center justify-around">
       <Geno />

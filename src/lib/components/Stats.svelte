@@ -5,7 +5,6 @@
   export let completions: string
   export let total: string
   export let yards: number
-  export let ypa: number
   export let td: number
   export let int: number
   export let qbr: number
@@ -54,7 +53,7 @@
     <tr>
       <td class="p-2">{completions}<br />{total}</td>
       <td class="p-2">{yards}</td>
-      <td class="p-2">{ypa}</td>
+      <td class="p-2">ya</td>
       <td class="p-2">{td}</td>
       <td class="p-2">{int}</td>
       <td class="p-2">{qbr}</td>

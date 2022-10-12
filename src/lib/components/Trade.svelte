@@ -1,4 +1,4 @@
-<div class="text-white p-4">
+<div class="p-4 text-white">
   <p class="my-4 p-2">
     On March 16th 2022, the Seattle Seahawks traded franchise legend and decade-long
     starting qb Russell Wilson to the Denver Broncos. This came on the heels of reports of
