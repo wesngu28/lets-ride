@@ -28,10 +28,10 @@
   })
 </script>
 
-<table bind:this={table}>
-  <div>
+<table bind:this={table} class="text-white flex flex-col p-4 border-collapse place-items-center">
+  <div class="text-white text-center">
     {#if header}
-      <h2>{header}</h2>
+      <h2 class="font-bold">{header}</h2>
     {/if}
     {#if desc}
       <p>{desc}</p>
@@ -40,51 +40,22 @@
 
   <tbody>
     <tr>
-      <th>Passes</th>
-      <th>Yards</th>
-      <th>Yards per Attempt</th>
-      <th>Touchdowns</th>
-      <th>Interceptions</th>
-      <th>QB Rating</th>
-      <th>Sacks</th>
+      <th class="p-2">Passes</th>
+      <th class="p-2">Yards</th>
+      <th class="p-2">Yards per Attempt</th>
+      <th class="p-2">Touchdowns</th>
+      <th class="p-2">Interceptions</th>
+      <th class="p-2">QB Rating</th>
+      <th class="p-2">Sacks</th>
     </tr>
     <tr>
-      <td>{completions}<br />{total}</td>
-      <td>{yards}</td>
-      <td>{ypa}</td>
-      <td>{td}</td>
-      <td>{int}</td>
-      <td>{qbr}</td>
-      <td>{sacks}</td>
+      <td class="p-2">{completions}<br />{total}</td>
+      <td class="p-2">{yards}</td>
+      <td class="p-2">{ypa}</td>
+      <td class="p-2">{td}</td>
+      <td class="p-2">{int}</td>
+      <td class="p-2">{qbr}</td>
+      <td class="p-2">{sacks}</td>
     </tr>
   </tbody>
 </table>
-
-<style lang="scss">
-  table {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    div {
-      color: white;
-      h2 {
-        font-weight: bold;
-        text-align: center;
-      }
-    }
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-collapse: collapse;
-    place-items: center;
-    th {
-      padding: 0.5rem;
-      background-color: var(--headColor);
-      color: white;
-    }
-    td {
-      padding: 0.5rem;
-      background-color: #69be28;
-      text-align: center;
-    }
-  }
-</style>

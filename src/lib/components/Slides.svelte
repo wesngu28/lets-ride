@@ -7,19 +7,6 @@
   }, 5000)
 </script>
 
-<div>
-  <img alt="honestly visual way to represent russ's time with the bronco" src={active} />
+<div class="flex justify-center h-96 width-1/2">
+  <img class="p-4 w-full h-full" alt="honestly visual way to represent russ's time with the bronco" src={active} />
 </div>
-
-<style lang="scss">
-  div {
-    display: flex;
-    justify-content: center;
-    width: 50vw;
-  }
-  img {
-    padding: 1rem;
-    width: 50%;
-    height: auto;
-  }
-</style>

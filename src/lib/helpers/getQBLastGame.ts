@@ -14,7 +14,7 @@ export async function getQBLastGame(espnAthleteID: string) {
   }
   let gameInfo = {
     week: opponent.week,
-    opponent: opponent.opponent.displayName,
+    opponent: opponent.opponent.abbreviation,
     score: scoreConstruction(),
     completions: stats[0],
     attempts: stats[1],

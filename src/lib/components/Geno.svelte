@@ -23,61 +23,56 @@
 </script>
 
 <div>
-  <div>
-    <img src="/geno.png" />
-    <div>
-      <h3>Geno's Second Chance</h3>
-      <p>"They wrote me off but I ain't write back though."</p>
+  <div class="bg-[#917153] flex flex-col items-center h-max w-[48rem]">
+    <div class="flex flex-row text-center items-center p-4">
+      <img
+        class="w-3/4 rounded-lg m-4"
+        alt="geno smith, best starting qb for the seahawks in the 2020s"
+        src="/geno.png"
+      />
+      <div>
+        <h2 class="font-extrabold">Geno's Second Chance</h2>
+        <p>"They wrote me off but I ain't write back though."</p>
+      </div>
     </div>
+    <h2 class="text-2xl">
+      <span class="font-bold">WK{weeklyGameStats.week}</span> vs
+      <span class="font-bold"
+        >{`${weeklyGameStats.opponent}`} => {weeklyGameStats.score}</span
+      >
+    </h2>
+    <table class="table table-fixed border-separate border-spacing-x-4">
+      <tr>
+        <th class="font-normal">Passes</th>
+        <th class="font-normal">Yds</th>
+        <th class="font-normal">Ypa</th>
+        <th class="font-normal">TD</th>
+        <th class="font-normal">QBR</th>
+        <th class="font-normal">Sacks</th>
+      </tr>
+      <tr>
+        <td class="font-black"
+          >{weeklyGameStats.completions}/{weeklyGameStats.attempts}</td
+        >
+        <td class="font-black">{weeklyGameStats.yards}</td>
+        <td class="font-black">{weeklyGameStats.ypa}</td>
+        <td class="font-black">{weeklyGameStats.tds}/{weeklyGameStats.ints}</td>
+        <td class="font-black">{weeklyGameStats.qbr}</td>
+        <td class="font-black">{weeklyGameStats.sacks}</td>
+      </tr>
+    </table>
+    <Stats
+      header="Let Geno Cook?"
+      headColor="#FB4F14"
+      backColor="#324ab2"
+      completions="waboomba"
+      total="api pulla"
+      yards={333}
+      ypa={1.1}
+      td={1}
+      int={10}
+      qbr={10.0}
+      sacks={65}
+    />
   </div>
-  <h2>{`Week ${weeklyGameStats.week} vs the ${weeklyGameStats.opponent}`}</h2>
-  <p>{`${weeklyGameStats.score}`}</p>
-  <p>
-    {`${weeklyGameStats.completions}/${weeklyGameStats.attempts} for ${weeklyGameStats.yards} yards (${weeklyGameStats.ypa}ypa), ${weeklyGameStats.tds}/${weeklyGameStats.ints}TD, ${weeklyGameStats.qbr} QBR, ${weeklyGameStats.sacks} sacks`}
-  </p>
-  <Stats
-    header="Let Geno Cook?"
-    headColor="#FB4F14"
-    backColor="#324ab2"
-    completions="waboomba"
-    total="api pulla"
-    yards={333}
-    ypa={1.1}
-    td={1}
-    int={10}
-    qbr={10.0}
-    sacks={65}
-  />
 </div>
-
-<style lang="scss">
-  div {
-    background-color: #917153;
-    height: max-content;
-    width: 25vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    div {
-      display: flex;
-      flex-direction: row;
-      text-align: center;
-      div {
-        display: flex;
-        flex-direction: column;
-        width: max-content;
-      }
-    }
-    h2 {
-      margin-bottom: 0;
-    }
-    p {
-      margin-top: 0;
-    }
-    padding: 0.5rem;
-  }
-  img {
-    width: 75%;
-    border-radius: 15%;
-  }
-</style>
