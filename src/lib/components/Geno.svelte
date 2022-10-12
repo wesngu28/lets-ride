@@ -1,33 +1,15 @@
 <script lang="ts">
   import { getQBLastGame } from '$lib/helpers/getQBLastGame'
-    import { getQBSeasonStats } from '$lib/helpers/getQBSeasonStats'
-  import { getYardsPerAttempt } from '$lib/helpers/getYardsPerAttempt'
+  import { getQBSeasonStats } from '$lib/helpers/getQBSeasonStats'
+  import { yardsPerAttempt } from '$lib/helpers/getYardsPerAttempt'
+  import type { seasonStats, weeklyGameStats } from 'src/models/Stats'
   import { onMount } from 'svelte'
-  import Stats from './Stats.svelte'
-  let weeklyGameStats = {} as {
-    opponent: string
-    week: string
-    home: string
-    away: string
-    completions: string
-    attempts: string
-    yards: string
-    tds: string
-    ints: string
-    sacks: string
-    qbr: string
-  }
-  
-  let seasonStats ={} as {
-    completions: string
-    attempts: string
-    yards: string
-    tds: string
-    ints: string
-    sacks: string
-    qbr: string
-  }
+  import LastWeekStats from './LastWeekStats.svelte'
+    import Scoreboard from './Scoreboard.svelte'
+  import SeasonStats from './SeasonStats.svelte'
 
+  let weeklyGameStats = {} as weeklyGameStats
+  let seasonStats = {} as seasonStats
   onMount(async () => {
     weeklyGameStats = await getQBLastGame('15864', '26')
     seasonStats = await getQBSeasonStats('15864')
@@ -35,7 +17,7 @@
 </script>
 
 <div>
-  <div class="flex h-max w-[48rem] flex-col items-center bg-[#917153]">
+  <div class="flex h-max w-[48rem] flex-col items-center bg-[#453324] text-white">
     <div class="flex flex-row items-center p-4 text-center">
       <img
         class="m-4 w-3/4 rounded-lg"
@@ -47,58 +29,13 @@
         <p>"They wrote me off but I ain't write back though."</p>
       </div>
     </div>
-    <h2 class="text-2xl">
-      <span class="font-bold">WK{weeklyGameStats.week}</span> vs
-      <span class="font-bold"
-        >{`${weeklyGameStats.opponent}`} =>           <span
-        class={`font-bold ${
-          Number(weeklyGameStats.home) > Number(weeklyGameStats.away)
-            ? 'text-green-400'
-            : 'text-red-600'
-        }`}>{weeklyGameStats.home}</span
-      >
-      -
-      <span
-        class={`${
-          Number(weeklyGameStats.away) > Number(weeklyGameStats.home)
-            ? 'text-green-400'
-            : 'text-red-600'
-        }`}>{weeklyGameStats.away}</span
-      >
-      </span>
-    </h2>
-    <table class="table table-fixed border-separate border-spacing-x-4">
-      <tr>
-        <th class="font-normal">Passes</th>
-        <th class="font-normal">Yds</th>
-        <th class="font-normal">Ypa</th>
-        <th class="font-normal">TD</th>
-        <th class="font-normal">QBR</th>
-        <th class="font-normal">Sacks</th>
-      </tr>
-      <tr>
-        <td class="font-black"
-          >{weeklyGameStats.completions}/{weeklyGameStats.attempts}</td
-        >
-        <td class="font-black">{weeklyGameStats.yards}</td>
-        <td class="font-black">{getYardsPerAttempt(weeklyGameStats.attempts, weeklyGameStats.yards)}</td>
-        <td class="font-black">{weeklyGameStats.tds}/{weeklyGameStats.ints}</td>
-        <td class="font-black">{weeklyGameStats.qbr}</td>
-        <td class="font-black">{weeklyGameStats.sacks}</td>
-      </tr>
-    </table>
-    <Stats
+    <Scoreboard {weeklyGameStats} />
+    <LastWeekStats {weeklyGameStats} />
+    <SeasonStats
+      seasonStat={seasonStats}
       header="Let Geno Cook?"
       headColor="#FB4F14"
       backColor="#324ab2"
-      completions={seasonStats.completions}
-      total={seasonStats.attempts}
-      ypa={getYardsPerAttempt(seasonStats.attempts, seasonStats.yards)}
-      yards={seasonStats.yards}
-      td={seasonStats.tds}
-      int={seasonStats.ints}
-      qbr={seasonStats.qbr}
-      sacks={seasonStats.sacks}
     />
   </div>
 </div>

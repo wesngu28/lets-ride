@@ -4,7 +4,7 @@
     <div class="flex-1 flex-col border-t p-4 text-center">
       <div class="flex flex-row items-center">
         <img
-          alt='seahawks logo'
+          alt="seahawks logo"
           class="h-auto w-1/2 p-4"
           src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Seattle_Seahawks_logo.svg/2560px-Seattle_Seahawks_logo.svg.png"
         />
@@ -13,7 +13,7 @@
       <p>From Denver</p>
     </div>
     <div class="flex flex-1 flex-row items-center justify-evenly border-t border-l p-4">
-      <img class="w-1/2 p-4" alt='placeholder for seahawks player' src="/default.png" />
+      <img class="w-1/2 p-4" alt="placeholder for seahawks player" src="/default.png" />
       <div class="text-center">
         <p>???</p>
         <p>??? - College</p>

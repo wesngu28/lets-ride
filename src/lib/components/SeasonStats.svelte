@@ -1,16 +1,9 @@
 <script lang="ts">
+  import type { seasonStats } from 'src/models/Stats'
   import { onMount } from 'svelte'
-  export let header: string = ''
+  export let seasonStat: seasonStats
+  export let header: string
   export let desc: string = ''
-  export let completions: string
-  export let total: string
-  export let yards: string
-  export let ypa: string
-  export let td: string
-  export let int: string
-  export let qbr: string
-  export let sacks: string
-
   export let headColor: string
   export let backColor: string
 
@@ -45,20 +38,18 @@
     <tr>
       <th class="p-2">Passes</th>
       <th class="p-2">Yards</th>
-      <th class="p-2">Yards per Attempt</th>
       <th class="p-2">Touchdowns</th>
       <th class="p-2">Interceptions</th>
       <th class="p-2">QB Rating</th>
       <th class="p-2">Sacks</th>
     </tr>
     <tr>
-      <td class="p-2">{completions}<br />{total}</td>
-      <td class="p-2">{yards}</td>
-      <td class="p-2">{ypa}</td>
-      <td class="p-2">{td}</td>
-      <td class="p-2">{int}</td>
-      <td class="p-2">{qbr}</td>
-      <td class="p-2">{sacks}</td>
+      <td class="p-2">{seasonStat.completions}/{seasonStat.attempts}</td>
+      <td class="p-2">{seasonStat.yards}</td>
+      <td class="p-2">{seasonStat.tds}</td>
+      <td class="p-2">{seasonStat.ints}</td>
+      <td class="p-2">{seasonStat.qbr}</td>
+      <td class="p-2">{seasonStat.sacks}</td>
     </tr>
   </tbody>
 </table>
