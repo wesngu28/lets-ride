@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getQBLastGame } from '$lib/helpers/getQBLastGame'
-  import { yardsPerAttempt } from '$lib/helpers/getYardsPerAttempt'
+    import { getQBSeasonStats } from '$lib/helpers/getQBSeasonStats'
+  import { getYardsPerAttempt } from '$lib/helpers/getYardsPerAttempt'
   import { onMount } from 'svelte'
   import Stats from './Stats.svelte'
   let weeklyGameStats = {} as {
@@ -18,8 +19,19 @@
     qbr: string
   }
 
+  let seasonStats ={} as {
+    completions: string
+    attempts: string
+    yards: string
+    tds: string
+    ints: string
+    sacks: string
+    qbr: string
+  }
+
   onMount(async () => {
     weeklyGameStats = await getQBLastGame('14881', '7')
+    seasonStats = await getQBSeasonStats('14881')
   })
 
   const completionPercentage = (completions: string, total: string) => {
@@ -58,13 +70,14 @@
         backColor="#324ab2"
         header="Russell Wilson in Denver"
         desc="A prized free agent acquisition, expectations are high for Russ in Denver. Will he able to cook?"
-        completions="waboomba"
-        total="api "
-        yards={333}
-        td={1}
-        int={10}
-        qbr={10.0}
-        sacks={65}
+        completions={seasonStats.completions}
+        total={seasonStats.attempts}
+        ypa={getYardsPerAttempt(seasonStats.attempts, seasonStats.yards)}
+        yards={seasonStats.yards}
+        td={seasonStats.tds}
+        int={seasonStats.ints}
+        qbr={seasonStats.qbr}
+        sacks={seasonStats.sacks}
       />
     </div>
     <div class="p-4 text-center flex flex-col items-center">
@@ -90,7 +103,7 @@
       </p>
       <div class="text-left">
         <p class="text-2xl">{weeklyGameStats.completions}/{weeklyGameStats.attempts} <span class="text-xl">({`${completionPercentage(weeklyGameStats.completions, weeklyGameStats.attempts)}%`})</span></p>
-        <p class="text-2xl">{weeklyGameStats.yards} yards <span class="text-xl">({`${yardsPerAttempt(weeklyGameStats.attempts, weeklyGameStats.yards)} ypa`})</p>
+        <p class="text-2xl">{weeklyGameStats.yards} yards <span class="text-xl">({`${getYardsPerAttempt(weeklyGameStats.attempts, weeklyGameStats.yards)} ypa`})</p>
         <p class="text-2xl">{weeklyGameStats.tds}/{weeklyGameStats.ints} TD</p>
         <p class="text-2xl">{weeklyGameStats.qbr} QBR</p>
         <p class="text-2xl">Sacked {weeklyGameStats.sacks} times</p>

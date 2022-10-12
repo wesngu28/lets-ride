@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getQBLastGame } from '$lib/helpers/getQBLastGame'
-    import { yardsPerAttempt } from '$lib/helpers/getYardsPerAttempt'
+    import { getQBSeasonStats } from '$lib/helpers/getQBSeasonStats'
+  import { getYardsPerAttempt } from '$lib/helpers/getYardsPerAttempt'
   import { onMount } from 'svelte'
   import Stats from './Stats.svelte'
   let weeklyGameStats = {} as {
@@ -16,9 +17,20 @@
     sacks: string
     qbr: string
   }
+  
+  let seasonStats ={} as {
+    completions: string
+    attempts: string
+    yards: string
+    tds: string
+    ints: string
+    sacks: string
+    qbr: string
+  }
 
   onMount(async () => {
     weeklyGameStats = await getQBLastGame('15864', '26')
+    seasonStats = await getQBSeasonStats('15864')
   })
 </script>
 
@@ -69,7 +81,7 @@
           >{weeklyGameStats.completions}/{weeklyGameStats.attempts}</td
         >
         <td class="font-black">{weeklyGameStats.yards}</td>
-        <td class="font-black">{yardsPerAttempt(weeklyGameStats.attempts, weeklyGameStats.yards)}</td>
+        <td class="font-black">{getYardsPerAttempt(weeklyGameStats.attempts, weeklyGameStats.yards)}</td>
         <td class="font-black">{weeklyGameStats.tds}/{weeklyGameStats.ints}</td>
         <td class="font-black">{weeklyGameStats.qbr}</td>
         <td class="font-black">{weeklyGameStats.sacks}</td>
@@ -79,13 +91,14 @@
       header="Let Geno Cook?"
       headColor="#FB4F14"
       backColor="#324ab2"
-      completions="waboomba"
-      total="api pulla"
-      yards={333}
-      td={1}
-      int={10}
-      qbr={10.0}
-      sacks={65}
+      completions={seasonStats.completions}
+      total={seasonStats.attempts}
+      ypa={getYardsPerAttempt(seasonStats.attempts, seasonStats.yards)}
+      yards={seasonStats.yards}
+      td={seasonStats.tds}
+      int={seasonStats.ints}
+      qbr={seasonStats.qbr}
+      sacks={seasonStats.sacks}
     />
   </div>
 </div>
