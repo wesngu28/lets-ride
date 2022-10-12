@@ -4,7 +4,7 @@
   import Trade from '../components/Trade.svelte'
 </script>
 
-<div class="flex flex-1 flex-col items-center p-4 w-[42rem] h-screen bg-[#1E293B]">
+<div class="flex h-screen w-[42rem] flex-1 flex-col items-center bg-[#1E293B] p-4">
   <Header />
   <Slides />
   <Trade />

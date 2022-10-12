@@ -4,8 +4,8 @@
   import Russ from '$lib/components/Russ.svelte'
   import Sidebar from '$lib/components/Sidebar.svelte'
   import Team from '$lib/components/Team.svelte'
-    import TeamDraft from '$lib/components/TeamDraft.svelte'
-    import TeamHolder from '$lib/components/TeamHolder.svelte'
+  import TeamDraft from '$lib/components/TeamDraft.svelte'
+  import TeamHolder from '$lib/components/TeamHolder.svelte'
 </script>
 
 <div class="flex justify-start">
@@ -14,7 +14,7 @@
     <div id="most">
       <Russ />
     </div>
-    <div class="flex justify-around items-center">
+    <div class="flex items-center justify-around">
       <Geno />
       <TeamDraft />
     </div>
@@ -49,5 +49,4 @@
       align-items: center;
     }
   }
-
 </style>

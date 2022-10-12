@@ -1,10 +1,9 @@
 <script>
-
-    import Draft from "./Draft.svelte"
-    import TeamHolder from "./TeamHolder.svelte"
-
+  import Draft from './Draft.svelte'
+  import TeamHolder from './TeamHolder.svelte'
 </script>
-<div class="flex justify-around items-center">
+
+<div class="flex items-center justify-around">
   <TeamHolder />
   <div>
     <Draft />

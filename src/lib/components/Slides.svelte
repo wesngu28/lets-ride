@@ -7,6 +7,10 @@
   }, 5000)
 </script>
 
-<div class="flex justify-center h-96 width-1/2">
-  <img class="p-4 w-full h-full" alt="honestly visual way to represent russ's time with the bronco" src={active} />
+<div class="width-1/2 flex h-96 justify-center">
+  <img
+    class="h-full w-full p-4"
+    alt="honestly visual way to represent russ's time with the bronco"
+    src={active}
+  />
 </div>

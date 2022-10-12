@@ -1,8 +1,8 @@
 <script>
-    import Team from "./Team.svelte"
+  import Team from './Team.svelte'
 </script>
 
-<div class="w-min flex flex-col">
+<div class="flex w-min flex-col">
   <Team
     alt="logo of the broncos, a team that played in sb xlviii"
     logo="https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Denver_Broncos_logo.svg/2560px-Denver_Broncos_logo.svg.png"

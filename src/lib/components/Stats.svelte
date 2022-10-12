@@ -28,8 +28,11 @@
   })
 </script>
 
-<table bind:this={table} class="text-white flex flex-col p-4 border-collapse place-items-center">
-  <div class="text-white text-center">
+<table
+  bind:this={table}
+  class="flex border-collapse flex-col place-items-center p-4 text-white"
+>
+  <div class="text-center text-white">
     {#if header}
       <h2 class="font-bold">{header}</h2>
     {/if}

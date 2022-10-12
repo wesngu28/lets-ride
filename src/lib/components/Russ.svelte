@@ -22,13 +22,16 @@
   })
 </script>
 
-<div class="flex items-start flex-col">
-  <div class="bg-[#453324] p-4 flex items-center">
+<div class="flex flex-col items-start">
+  <div class="flex items-center bg-[#453324] p-4">
     <div class="flex flex-col items-center">
-      <img alt="first-year denver qb russell wilson"
+      <img
+        alt="first-year denver qb russell wilson"
         src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14881.png"
       />
-      <h2 class="mb-0">{`Week ${weeklyGameStats.week} vs the ${weeklyGameStats.opponent}`}</h2>
+      <h2 class="mb-0">
+        {`Week ${weeklyGameStats.week} vs the ${weeklyGameStats.opponent}`}
+      </h2>
       <p class="mt-0 mb-0">{`${weeklyGameStats.score}`}</p>
       <p class="mt-0">
         {`${weeklyGameStats.completions}/${weeklyGameStats.attempts} for ${weeklyGameStats.yards} yards (${weeklyGameStats.ypa}ypa), ${weeklyGameStats.tds}/${weeklyGameStats.ints}TD, ${weeklyGameStats.qbr} QBR, ${weeklyGameStats.sacks} sacks`}

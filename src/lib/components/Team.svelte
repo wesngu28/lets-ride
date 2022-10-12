@@ -6,8 +6,8 @@
   let losses: number = 1
 </script>
 
-<div class="p-4 text-center flex flex-col m-4 items-center bg-slate-600">
-  <img alt={alt} src={logo} />
+<div class="m-4 flex flex-col items-center bg-slate-600 p-4 text-center">
+  <img {alt} src={logo} />
   <h2 class="m-2">{teamName}</h2>
   <p><span class="m-2">{wins}</span><span>-</span><span class="m-2">{losses}</span></p>
 </div>

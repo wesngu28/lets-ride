@@ -23,10 +23,10 @@
 </script>
 
 <div>
-  <div class="bg-[#917153] flex flex-col items-center h-max w-[48rem]">
-    <div class="flex flex-row text-center items-center p-4">
+  <div class="flex h-max w-[48rem] flex-col items-center bg-[#917153]">
+    <div class="flex flex-row items-center p-4 text-center">
       <img
-        class="w-3/4 rounded-lg m-4"
+        class="m-4 w-3/4 rounded-lg"
         alt="geno smith, best starting qb for the seahawks in the 2020s"
         src="/geno.png"
       />
