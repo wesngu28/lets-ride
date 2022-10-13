@@ -3,10 +3,10 @@
   export let weeklyGameStats: weeklyGameStats
 </script>
 
-<h2 class="text-6xl font-bold">
-  Week {weeklyGameStats.week} vs {weeklyGameStats.opponent}
+<h2 class="text-2xl lg:text-4xl font-bold">
+  Week {weeklyGameStats.week} vs <span class="text-3xl lg:text-6xl font-bold">{weeklyGameStats.opponent}</span>
 </h2>
-<p class="mt-0 mb-0 text-4xl">
+<p class="mt-0 mb-0 text-2xl lg:text-4xl">
   <span
     class={`font-bold ${
       Number(weeklyGameStats.home) > Number(weeklyGameStats.away)

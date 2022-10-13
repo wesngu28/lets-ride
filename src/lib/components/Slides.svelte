@@ -9,7 +9,7 @@
 
 <div class="width-1/2 flex h-96 justify-center">
   <img
-    class="h-full w-full p-4"
+    class="object-cover p-4"
     alt="honestly visual way to represent russ's time with the bronco"
     src={active}
   />

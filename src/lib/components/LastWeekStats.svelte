@@ -14,16 +14,16 @@
     <th class="font-normal">Sacked</th>
   </tr>
   <tr>
-    <td class="text-2xl font-black"
+    <td class="text-xl lg:text-2xl font-black"
       >{weeklyGameStats.completions}/{weeklyGameStats.attempts} <br />
-      <span class="text-xl"
+      <span class="text-xl lg:text-2xl"
         >({`${completionPercentage(
           weeklyGameStats.completions,
           weeklyGameStats.attempts
         )}%`})</span
       ></td
     >
-    <td class="text-2xl font-black"
+    <td class="text-xl lg:text-2xl font-black"
       >{weeklyGameStats.yards}<br /><span class="text-xl"
         >({`${yardsPerAttempt(
           weeklyGameStats.attempts,
@@ -31,8 +31,8 @@
         )} ypa`})</span
       ></td
     >
-    <td class="text-2xl font-black">{weeklyGameStats.tds}/{weeklyGameStats.ints}</td>
-    <td class="text-2xl font-black">{weeklyGameStats.qbr}</td>
-    <td class="text-2xl font-black">{weeklyGameStats.sacks}</td>
+    <td class="text-xl lg:text-2xl font-black">{weeklyGameStats.tds}/{weeklyGameStats.ints}</td>
+    <td class="text-xl lg:text-2xl font-black">{weeklyGameStats.qbr}</td>
+    <td class="text-xl lg:text-2xl font-black">{weeklyGameStats.sacks}</td>
   </tr>
 </table>

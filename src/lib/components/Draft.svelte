@@ -1,4 +1,4 @@
-<div class="flex w-[28rem] flex-col border-solid bg-[#224952] text-white" id="chief">
+<div class="flex w-[28rem] flex-col border-solid bg-[#224952] text-white">
   <p class="text-center text-xl">Round 1 - Pick 11</p>
   <div class="flex items-stretch">
     <div class="flex-1 flex-col border-t p-4 text-center">
