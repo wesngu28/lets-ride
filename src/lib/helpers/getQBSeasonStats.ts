@@ -1,6 +1,6 @@
-import type { seasonStats } from 'src/models/Stats'
+import type { stats } from 'src/models/Stats'
 
-export async function getQBSeasonStats(espnAthleteID: string): Promise<seasonStats> {
+export async function getQBSeasonStats(espnAthleteID: string): Promise<stats> {
   const lastGameStatsResponse = await fetch(
     `https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/${espnAthleteID}/gamelog`
   )

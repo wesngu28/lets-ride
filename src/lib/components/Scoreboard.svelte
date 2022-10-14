@@ -1,10 +1,11 @@
 <script lang="ts">
-  import type { weeklyGameStats } from 'src/models/Stats'
-  export let weeklyGameStats: weeklyGameStats
+  import type { stats } from 'src/models/Stats'
+  export let weeklyGameStats: stats
 </script>
 
-<h2 class="text-2xl lg:text-4xl font-bold">
-  Week {weeklyGameStats.week} vs <span class="text-3xl lg:text-6xl font-bold">{weeklyGameStats.opponent}</span>
+<h2 class="text-2xl font-bold lg:text-4xl">
+  Week {weeklyGameStats.week} vs
+  <span class="text-3xl font-bold lg:text-6xl">{weeklyGameStats.opponent}</span>
 </h2>
 <p class="mt-0 mb-0 text-2xl lg:text-4xl">
   <span

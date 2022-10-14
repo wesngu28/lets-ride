@@ -26,13 +26,17 @@
   </div>
 
   <p class=" my-4 py-2">
-    At the time, this was seen as an absolute steal for Denver, setting them up with their
-    answer at the quarterback position and vaulting them up to Super Bowl contenders,
-    while sending the Seahawks to a rebuilding phase and losing seasons under journeyman
-    backup Geno Smith.
+    Many have taken to calling this a steal for the Broncos, but time will tell if he can
+    live up to his lofty expectations.
   </p>
 
-  <h2 class="my-4 p-8 text-2xl">
+  <h2 class="my-2 p-8 text-2xl">
     Let's see how the trade is ending up for both teams...
   </h2>
+
+  <p class="my-2 py-2 text-xs">
+    Just a fun little thing made to learn SvelteKit, and also uses Tailwind, with
+    questionable design choices, like the choice Nathanial Hackett made to kick a 64
+    yard field goal instead of going for it with the quarterback you paid 240 million for.
+  </p>
 </div>
