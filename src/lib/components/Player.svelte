@@ -14,6 +14,7 @@
   export let altPlayer: string
   export let srcPlayer: string
   export let team: string
+  export let playerID: string
 
   let weeklyGameStats = {
     opponent: 'Getting data...',
@@ -39,8 +40,8 @@
   } as stats
 
   alive(async function fetchData() {
-    weeklyGameStats = await getQBLastGame('14881', '7')
-    seasonStats = await getQBSeasonStats('14881')
+    weeklyGameStats = await getQBLastGame(playerID, team)
+    seasonStats = await getQBSeasonStats(playerID)
   }, 86400000)
 </script>
 

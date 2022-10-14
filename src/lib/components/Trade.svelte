@@ -37,6 +37,6 @@
   <p class="my-2 py-2 text-xs">
     Just a fun little thing made to learn SvelteKit, and also uses Tailwind, with
     questionable design choices, like the choice Nathanial Hackett made to kick a 64
-    yard field goal instead of going for it with the quarterback you paid 240 million for.
+    yard field goal. None of the photos are mine and are taken from ESPN or news sources.
   </p>
 </div>
