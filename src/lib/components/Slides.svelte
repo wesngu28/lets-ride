@@ -1,5 +1,12 @@
 <script lang="ts">
-  let images = ['/RussHamler.png', '/CrowdLove.png', '/ColtHello.png']
+  let images = [
+    '/RussHamler.png',
+    '/CrowdLove.png',
+    '/ColtHello.png',
+    'fly.png',
+    'grouphug.png',
+    'gilmore.png'
+  ]
   let active: string
   active = images[0]
   setInterval(() => {
