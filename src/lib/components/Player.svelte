@@ -13,6 +13,7 @@
     export let logoName: string;
     export let altPlayer: string;
     export let srcPlayer: string;
+    export let team: string;
 
     let weeklyGameStats = {} as weeklyGameStats
     let seasonStats = {} as seasonStats
@@ -22,13 +23,13 @@
     })
   </script>
   
-  <div class="flex flex-col lg:flex-row items-center p-6 text-white">
+  <div class="w-flex flex-col lg:flex-row items-center p-3 lg:p-6 text-white">
     <div class="flex flex-col">
-      <Team alt={altLogo} logo={srcLogo} teamName={logoName}
+      <Team {team} alt={altLogo} logo={srcLogo} teamName={logoName}
       />
     </div>
   
-    <div class="flex flex-col 2xl:flex-row items-center bg-[#453324] p-4">
+    <div class="flex flex-col 2xl:flex-row items-center bg-[#453324] p-1 lg:p-4">
       <div class="flex flex-col items-center">
         <img
           class="w-4/6" alt={altPlayer} src={srcPlayer}
@@ -37,7 +38,7 @@
           seasonStat={seasonStats}
         />
       </div>
-      <div class="flex flex-col items-center p-4 text-center">
+      <div class="flex flex-col items-center p-1 lg:p-4 text-center">
         <Scoreboard {weeklyGameStats} />
         <LastWeekStats {weeklyGameStats} />
       </div>
