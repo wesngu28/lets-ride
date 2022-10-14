@@ -26,6 +26,7 @@
 </script>
 
 <div class="text-left">
+  <p class="text-center">2022</p>
   <p class="text-2xl">
     {seasonStat.completions}/{seasonStat.attempts}
     <span class="text-xl"

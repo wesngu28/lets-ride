@@ -45,11 +45,8 @@
 </script>
 
 <div class="flex flex-col items-center p-3 text-white lg:flex-row lg:p-6">
-  <div class="flex flex-col">
-    <Team {team} alt={altLogo} logo={srcLogo} teamName={logoName} />
-  </div>
-
   <div class="flex flex-col items-center bg-[#453324] p-1 lg:p-4 2xl:flex-row">
+    <Team {team} alt={altLogo} logo={srcLogo} teamName={logoName} />
     <div class="flex flex-col items-center">
       <img class="w-4/6" alt={altPlayer} src={srcPlayer} />
       <SeasonStats seasonStat={seasonStats} />

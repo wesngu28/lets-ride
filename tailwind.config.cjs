@@ -2,7 +2,19 @@
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {}
+    animation: {
+      slideshow: 'slideshow 1s ease-out',
+    },
+    keyframes: {
+      slideshow: {
+        '0%': {
+          opacity: 0,
+        },
+        '100%': {
+          opacity: 1,
+        },
+      },
+    },
   },
   plugins: []
 }

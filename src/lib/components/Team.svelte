@@ -12,7 +12,7 @@
   }, 86400000)
 </script>
 
-<div class="m-4 flex flex-col items-center bg-slate-600 p-2 text-center lg:p-4">
+<div class="m-4 flex flex-col items-center bg-[#453324] p-2 text-center lg:p-4">
   <img class="w-1/6 md:w-auto" {alt} src={logo} />
   <h2 class="m-2">{teamName}</h2>
   <p><span class="m-2">{record}</span></p>

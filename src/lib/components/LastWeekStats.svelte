@@ -5,7 +5,7 @@
   export let weeklyGameStats: stats
 </script>
 
-<table class="table table-fixed border-separate border-spacing-x-3">
+<table class="table table-fixed border-separate border-spacing-x-2.5 md:border-spacing-x-3">
   <tr>
     <th class="font-normal">Passes</th>
     <th class="font-normal">Yds</th>
