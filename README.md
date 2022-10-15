@@ -1,38 +1,15 @@
-# create-svelte
+# Russ Trade Dashboard
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A quick little dashboard I made to display some of the relevant information regarding the Russell Wilson Seattle Seahawks to Denver trade, showing Russ's current stats on the season and his previous game, the same listed stats for Geno, as well as their team records, the projected pick that Seattle got from Denver, and a small write-up of the trade details.
 
-## Creating a project
+## Hosting
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+If you want to host this for some reason, clone the repo and then run
 
 ```bash
 npm run build
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Notes
+I made this using SvelteKit and this is my second project with Svelte. The content is fetched from ESPN and auto-fetches once a day or on build. I started with using sass but switched to tailwind during development. The photos were taken from various sources and I do not claim to own them. I am not a Broncos fan.
