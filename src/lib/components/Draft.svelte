@@ -1,5 +1,5 @@
 <div class="flex w-[20rem] flex-col border-solid bg-gray-800 text-white md:w-[28rem]">
-  <p class="text-center text-xl">Round 1 - Pick 11</p>
+  <p class="text-center text-xl">Round 1 - Pick 5</p>
   <div class="flex items-stretch">
     <div class="flex-1 flex-col border-t p-4 text-center">
       <div class="flex flex-row items-center">
